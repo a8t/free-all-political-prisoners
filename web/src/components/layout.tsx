@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import Header from "./header";
 import Footer from "./footer";
 import "../styles/layout.css";
@@ -29,23 +30,16 @@ class Layout extends React.Component {
   };
 
   render() {
-    const {
-      children,
-      onHideNav,
-      onShowNav,
-      showNav,
-      siteTitle,
-      navMenuItems,
-      textWhite = true,
-    } = this.props;
+    const { children, showNav, siteTitle, navMenuItems, textWhite = true } = this.props;
     const { scrolled } = this.state;
     return (
       <>
+        <Helmet>
+          <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        </Helmet>
         <Header
           navMenuItems={navMenuItems}
           siteTitle={siteTitle}
-          onHideNav={onHideNav}
-          onShowNav={onShowNav}
           showNav={showNav}
           scrolled={scrolled}
           textWhite={textWhite}

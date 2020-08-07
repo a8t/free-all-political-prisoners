@@ -7,7 +7,7 @@
     "tailwind:css": "tailwind build src/css/tailwind.src.css -c  tailwind.js -o src/css/tailwind.css",
     "build": "gatsby build",
     "clean-cache": "gatsby clean",
-    "dev": "npm run clean-cache && gatsby develop",
+    "dev": "npm run clean-cache && gatsby develop -p 2612",
     "lint": "eslint .",
     "format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
@@ -52,6 +52,7 @@
     "gatsby-transformer-sharp": "^2.3.13",
     "katex": "^0.11.1",
     "react-instagram-embed": "^1.5.0",
-    "react-player": "^1.15.2"
+    "react-player": "^1.15.2",
+    "react-transition-group": "^4.4.1"
   }
 }
