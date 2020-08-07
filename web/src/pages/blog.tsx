@@ -66,7 +66,11 @@ const IndexPage = (props) => {
 
   return (
     <Layout textWhite={false}>
-      <SEO title={site.title || 'Missing title'} description={site.description || 'Missing description'} keywords={site.keywords || []} />
+      <SEO
+        title={site.title || "Missing title"}
+        description={site.description || "Missing description"}
+        keywords={site.keywords || []}
+      />
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
         <div className="py-6">{postNodes && <BlogPostPreviewList nodes={postNodes} />}</div>

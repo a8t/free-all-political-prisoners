@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, navigate } from "gatsby";
 
-const doNavigate = target => {
+const doNavigate = (target) => {
   if (!target || !target.length) {
     return;
   }
@@ -13,7 +13,7 @@ const doNavigate = target => {
   }
 };
 
-const CTALink = props => {
+const CTALink = (props) => {
   let link = props.route || props.link || "#";
   if (
     props.landingPageRoute &&

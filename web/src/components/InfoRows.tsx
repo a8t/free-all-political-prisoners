@@ -4,7 +4,7 @@ import PortableText from "./portableText";
 import { getFluidGatsbyImage } from "gatsby-source-sanity";
 import clientConfig from "../../client-config";
 
-const maybeImage = illustration => {
+const maybeImage = (illustration) => {
   let img = null;
   if (
     illustration &&
@@ -25,7 +25,7 @@ const maybeImage = illustration => {
   return img;
 };
 
-const InfoRow = props => {
+const InfoRow = (props) => {
   const img = maybeImage(props.illustration);
   const sizeClass = img ? "sm:w-1/2" : "sm:w-1/1";
   return (
@@ -41,7 +41,7 @@ const InfoRow = props => {
   );
 };
 
-const InfoRowFlipped = props => {
+const InfoRowFlipped = (props) => {
   const img = maybeImage(props.illustration);
   const sizeClass = img ? "sm:w-1/2" : "sm:w-1/1";
   return (
@@ -57,9 +57,9 @@ const InfoRowFlipped = props => {
   );
 };
 
-const InfoRows = props => {
+const InfoRows = (props) => {
   const contentRows = (props.rows || [])
-    .filter(r => !r.disabled)
+    .filter((r) => !r.disabled)
     .map((r, i) => {
       return i % 2 === 0 ? <InfoRow key={r._key} {...r} /> : <InfoRowFlipped key={r._key} {...r} />;
     });

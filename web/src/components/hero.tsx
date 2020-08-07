@@ -4,7 +4,7 @@ import clientConfig from "../../client-config";
 import CTALink from "./CTALink";
 
 import { getFluidGatsbyImage } from "gatsby-source-sanity";
-const maybeImage = illustration => {
+const maybeImage = (illustration) => {
   let img = null;
   if (illustration && illustration.image && illustration.image.asset && !illustration.disabled) {
     const fluidProps = getFluidGatsbyImage(

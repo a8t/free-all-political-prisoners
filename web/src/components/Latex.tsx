@@ -8,7 +8,7 @@ const LatexRender = ({ isInline = false, latex = "" }) => {
     setHtml(
       KaTeX.renderToString(latex, {
         displayMode: !isInline,
-        throwOnError: false
+        throwOnError: false,
       })
     );
   };

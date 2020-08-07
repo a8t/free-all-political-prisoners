@@ -5,8 +5,8 @@ const CTAColumn = ({ width, label, title, body, ctas = [] }) => {
   const className = `w-full md:w-1/${width} p-6 flex flex-col flex-grow flex-shrink`;
 
   const actions = ctas
-    .filter(c => c.title)
-    .map(c => {
+    .filter((c) => c.title)
+    .map((c) => {
       return (
         <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
           <div className="flex items-center justify-start">
@@ -36,7 +36,7 @@ const CTAColumn = ({ width, label, title, body, ctas = [] }) => {
 
 const CTAColumns = ({ title, columns }) => {
   const cols = columns
-    .filter(c => !c.disabled)
+    .filter((c) => !c.disabled)
     .map((c, i) => {
       return <CTAColumn width={columns.length} key={c._key} {...c} />;
     });
