@@ -98,7 +98,7 @@ function TailwindCSSTransition({
   );
 }
 
-function Transition({ show, appear, ...rest }: TransitionProps) {
+export default function Transition({ show, appear, ...rest }: TransitionProps) {
   const { parent } = useContext(TransitionContext);
   const isInitialRender = useIsInitialRender();
   const isChild = show === undefined;
@@ -127,5 +127,3 @@ function Transition({ show, appear, ...rest }: TransitionProps) {
     </TransitionContext.Provider>
   );
 }
-
-export default Transition;
