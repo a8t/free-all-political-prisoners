@@ -1,6 +1,6 @@
 import React from "react";
-import GraphQLErrorList from "../components/graphql-error-list";
-import Layout from "../containers/layout";
+import GraphQLErrorList from "./graphql-error-list";
+import Layout from "./layout";
 
 const Errors = ({ errors }) => (
   <Layout>

@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import Header from "./header";
 import Footer from "./footer";
-import "../styles/layout.css";
+import "../../styles/layout.css";
 
 class Layout extends React.Component {
   constructor(props) {

@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Errors from "../components/errors";
+import Errors from "../components/shared/errors";
 import Page from "../templates/page";
-import Header from "../components/homepage/header";
+import Header from "../components/shared/header";
 import Hero from "../components/homepage/hero";
 
 export const query = graphql`

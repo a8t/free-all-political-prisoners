@@ -22,7 +22,6 @@ const Footer = ({ siteTitle }) => (
                 width="479.767"
                 height="50.502"
                 transform="matrix(1,0,0,1,0,0)"
-                fill="rgb(0,0,0)"
               />
               <path
                 className="plane-take-off"

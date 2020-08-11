@@ -7,7 +7,16 @@ import { buildImageObj } from "../lib/helpers";
 
 // https://ogp.me
 
-function SEO({ description, lang, meta, keywords, title, image, bodyAttr, gradient }) {
+function SEO({
+  description = null,
+  lang = null,
+  meta = null,
+  keywords = null,
+  title = null,
+  image = null,
+  bodyAttr = null,
+  gradient = null,
+}) {
   return (
     <StaticQuery
       query={detailsQuery}
