@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 
-import Hero from "../components/homepage/hero";
+import Hero from "../components/page-builder/hero";
 import InfoRows from "../components/page-builder/InfoRows";
 import CTAColumns from "../components/page-builder/cta-columns";
 import CTA from "../components/page-builder/cta";
