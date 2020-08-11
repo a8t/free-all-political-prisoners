@@ -5,9 +5,9 @@ import {
   filterOutDocsWithoutSlugs,
   filterOutDocsPublishedInTheFuture,
 } from "../lib/helpers";
-import BlogPostPreviewList from "../components/blog-post-preview-list";
-import Container from "../components/container";
-import GraphQLErrorList from "../components/graphql-error-list";
+import BlogPostPreviewList from "../components/blog/blog-post-preview-list";
+import Container from "../components/shared/container";
+import GraphQLErrorList from "../components/shared/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 
@@ -66,7 +66,11 @@ const IndexPage = (props) => {
 
   return (
     <Layout textWhite={false}>
-      <SEO title={site.title || 'Missing title'} description={site.description || 'Missing description'} keywords={site.keywords || []} />
+      <SEO
+        title={site.title || "Missing title"}
+        description={site.description || "Missing description"}
+        keywords={site.keywords || []}
+      />
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
         <div className="py-6">{postNodes && <BlogPostPreviewList nodes={postNodes} />}</div>

@@ -7,20 +7,25 @@ import { buildImageObj } from "../lib/helpers";
 
 // https://ogp.me
 
-function SEO({ description, lang, meta, keywords, title, image, bodyAttr, gradient }) {
+function SEO({
+  description = null,
+  lang = null,
+  meta = null,
+  keywords = null,
+  title = null,
+  image = null,
+  bodyAttr = null,
+  gradient = null,
+}) {
   return (
     <StaticQuery
       query={detailsQuery}
-      render={data => {
+      render={(data) => {
         const metaDescription = description || (data.site && data.site.description) || "";
         const siteTitle = (data.site && data.site.title) || "";
         const siteAuthor = (data.site && data.site.author && data.site.author.name) || "";
         const metaImage =
-          image && image.asset
-            ? imageUrlFor(buildImageObj(image))
-                .width(1200)
-                .url()
-            : "";
+          image && image.asset ? imageUrlFor(buildImageObj(image)).width(1200).url() : "";
 
         const pageTitle = title || siteTitle;
 
@@ -33,62 +38,62 @@ function SEO({ description, lang, meta, keywords, title, image, bodyAttr, gradie
             meta={[
               {
                 name: "google-site-verification",
-                content: "7MfJFsxBVui5UlEBExUFeMW9-Q6g9fPgoaxwzvbqaV0"
+                content: "7MfJFsxBVui5UlEBExUFeMW9-Q6g9fPgoaxwzvbqaV0",
               },
               {
                 name: "description",
-                content: metaDescription
+                content: metaDescription,
               },
               {
                 property: "og:title",
-                content: title
+                content: title,
               },
               {
                 property: "og:description",
-                content: metaDescription
+                content: metaDescription,
               },
               {
                 property: "og:type",
-                content: "website"
+                content: "website",
               },
               {
                 property: "og:image",
-                content: metaImage
+                content: metaImage,
               },
               {
                 name: "twitter:card",
-                content: "summary"
+                content: "summary",
               },
               {
                 name: "twitter:creator",
-                content: siteAuthor
+                content: siteAuthor,
               },
               {
                 name: "twitter:title",
-                content: title
+                content: title,
               },
               {
                 name: "twitter:description",
-                content: metaDescription
-              }
+                content: metaDescription,
+              },
             ]
               .concat(
                 keywords && keywords.length > 0
                   ? {
                       name: "keywords",
-                      content: keywords.join(", ")
+                      content: keywords.join(", "),
                     }
                   : []
               )
               .concat(meta)}
           >
-            {gradient && gradient.from && gradient.to && (
+            {/* {gradient && gradient.from && gradient.to && (
               <style type="text/css">{`
               .gradient {
                 background: linear-gradient(90deg, ${gradient.from} 0%, ${gradient.to} 100%);
               }
             `}</style>
-            )}
+            )} */}
           </Helmet>
         );
       }}
@@ -99,7 +104,7 @@ function SEO({ description, lang, meta, keywords, title, image, bodyAttr, gradie
 SEO.defaultProps = {
   lang: "en",
   meta: [],
-  keywords: []
+  keywords: [],
 };
 
 SEO.propTypes = {
@@ -107,7 +112,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 
 export default SEO;

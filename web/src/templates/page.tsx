@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 
-import Hero from "../components/hero";
-import InfoRows from "../components/InfoRows";
-import CTAColumns from "../components/cta-columns";
-import CTA from "../components/cta";
-import Pricing from "../components/pricing";
-import { TopWave, BottomWave } from "../components/wave";
+import Hero from "../components/page-builder/hero";
+import InfoRows from "../components/page-builder/InfoRows";
+import CTAColumns from "../components/page-builder/cta-columns";
+import CTA from "../components/page-builder/cta";
+import Pricing from "../components/page-builder/pricing";
+import { TopWave, BottomWave } from "../components/page-builder/wave";
 
-import GraphQLErrorList from "../components/graphql-error-list";
+import GraphQLErrorList from "../components/shared/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 
@@ -120,7 +120,7 @@ const Page = (props) => {
         }}
         gradient={gradient}
       />
-      <div className="pt-24">{content}</div>
+      {content}
     </Layout>
   );
 };
