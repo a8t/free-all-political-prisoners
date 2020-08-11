@@ -21,14 +21,17 @@ function Hero(props) {
     <BackgroundImage
       Tag="section"
       fluid={heroImg.childImageSharp.fluid}
-      backgroundColor={`#040e18`}
-      className="h-screen"
+      backgroundColor={`#000000`}
+      // className="h-screen"
     >
-      <div className="h-screen container mx-auto flex flex-wrap flex-col md:flex-row items-center ">
+      <div
+        className="h-screen container mx-auto flex flex-wrap flex-col justify-end pb-12"
+        style={{ maxHeight: "80vh" }}
+      >
         <main
           className="
           px-3 sm:px-6
-          mt-10/12 md:mt-1/2 mx-auto lg:mt-20 xl:mt-28 lg:mx-0 lg:ml-auto sm:text-center lg:text-right"
+          mx-auto lg:mx-0 lg:ml-auto sm:text-center lg:text-right"
         >
           <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-100 sm:text-5xl sm:leading-none md:text-6xl">
             Nobody should be

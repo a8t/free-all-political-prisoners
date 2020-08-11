@@ -2,6 +2,8 @@ import React from "react";
 import { graphql } from "gatsby";
 import Errors from "../components/errors";
 import Page from "../templates/page";
+import Header from "../components/homepage/header";
+import Hero from "../components/homepage/hero";
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -66,7 +68,12 @@ const IndexPage = (props) => {
     return <Errors errors={errors} />;
   }
 
-  return <Page data={data} />;
+  return (
+    <>
+      <Header />
+      <Hero />
+    </>
+  );
 };
 
 export default IndexPage;
