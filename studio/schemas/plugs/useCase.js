@@ -11,10 +11,12 @@ export default {
     {
       name: 'caseStudies',
       type: 'array',
-      of: [{
-        type: 'reference',
-        to: [{type: 'caseStudy'}]
-      }]
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'caseStudy'}]
+        }
+      ]
     }
   ],
   preview: {
@@ -22,7 +24,7 @@ export default {
       title: 'title',
       useCase: 'useCase.name'
     },
-    prepare({title, useCase}) {
+    prepare ({title, useCase}) {
       return {
         title: 'Use case',
         subtitle: useCase

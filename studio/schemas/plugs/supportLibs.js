@@ -6,12 +6,10 @@ export default {
     {
       name: 'title',
       type: 'string'
-
     },
     {
       name: 'subtitle',
       type: 'simpleBlockContent'
-
     },
 
     {
@@ -21,9 +19,11 @@ export default {
         {
           title: 'Support lib',
           type: 'reference',
-          to: [{
-            type: 'supportLib'
-          }]
+          to: [
+            {
+              type: 'supportLib'
+            }
+          ]
         }
       ]
     }
@@ -34,7 +34,7 @@ export default {
       subtitle: 'subtitle',
       media: 'logo'
     },
-    prepare({title, subtitle, media}) {
+    prepare ({title, subtitle, media}) {
       return {
         title,
         subtitle: `Support libs. ${subtitle}`,

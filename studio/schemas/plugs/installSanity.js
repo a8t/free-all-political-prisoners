@@ -18,7 +18,7 @@ export default {
     select: {
       title: 'title'
     },
-    prepare({title, code}) {
+    prepare ({title, code}) {
       return {
         title: 'Install sanity',
         subtitle: `${title} | ${code || 'Default code'}`

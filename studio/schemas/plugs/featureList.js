@@ -45,7 +45,7 @@ export default {
       type: 'number',
       fieldset: 'listSettings',
       min: 3,
-      max: 4,
+      max: 4
     },
     {
       title: 'List type',
@@ -55,7 +55,6 @@ export default {
       options: {
         list: ['checkmark', 'ordered', 'customIcon']
       }
-      
     },
     {
       name: 'features',
@@ -70,9 +69,11 @@ export default {
       name: 'ctas',
       title: 'Call to actions',
       type: 'array',
-      of: [{
-        type: 'cta'
-      }]
+      of: [
+        {
+          type: 'cta'
+        }
+      ]
     }
   ],
   preview: {
@@ -81,7 +82,7 @@ export default {
       title: 'title',
       features: 'features'
     },
-    prepare({label, title, features}) {
+    prepare ({label, title, features}) {
       return {
         title: title || label ? `Feature list: ${title || label}` : 'Untitled feature list',
         subtitle: `Features: ${features.map(f => f.title).join(', ')}±`,

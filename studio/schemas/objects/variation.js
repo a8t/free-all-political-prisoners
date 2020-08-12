@@ -27,10 +27,10 @@ export default {
   preview: {
     select: {
       variationId: 'variationId',
-      percentage:  'percentage',
+      percentage: 'percentage',
       page: 'page.title'
     },
-    prepare({percentage, page, variationId}) {
+    prepare ({percentage, page, variationId}) {
       return {
         title: `${variationId || 'Missing id'} / ${percentage}%`,
         subtitle: page

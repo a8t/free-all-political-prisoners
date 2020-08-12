@@ -6,12 +6,10 @@ export default {
     {
       name: 'title',
       type: 'string'
-
     },
     {
       name: 'subtitle',
       type: 'simpleBlockContent'
-
     },
 
     {
@@ -21,9 +19,11 @@ export default {
         {
           title: 'Example frontend',
           type: 'reference',
-          to: [{
-            type: 'exampleFrontend'
-          }]
+          to: [
+            {
+              type: 'exampleFrontend'
+            }
+          ]
         }
       ]
     }

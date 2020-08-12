@@ -9,7 +9,7 @@ export default {
     {
       type: 'array',
       name: 'items',
-      of: [{ type: 'cta' }]
+      of: [{type: 'cta'}]
     }
   ]
 }

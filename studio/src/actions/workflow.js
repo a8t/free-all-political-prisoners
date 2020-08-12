@@ -1,14 +1,14 @@
-import React, { useMemo } from 'react'
-import { useDocumentOperation } from '@sanity/react-hooks'
-import { PublishAction } from 'part:@sanity/base/document-actions'
+import React, {useMemo} from 'react'
+import {useDocumentOperation} from '@sanity/react-hooks'
+import {PublishAction} from 'part:@sanity/base/document-actions'
 import client from 'part:@sanity/base/client'
-import { icons } from '../structure/blog'
+import {icons} from '../structure/blog'
 
 // Get the latest workflow status for a draft revision
-async function workflowStatus(draft) {
+async function workflowStatus (draft) {
   if (!draft) return null
 
-  return client.fetch('* [_id == $id][0]{_rev}', { id: draft._id }).then(doc => {
+  return client.fetch('* [_id == $id][0]{_rev}', {id: draft._id}).then(doc => {
     console.log('draft', draft, doc)
     return client.fetch(
       " *[_type == 'workflow.status' && draft == $id && revision == $revision] | order(_updatedAt desc)[0]",
@@ -20,7 +20,7 @@ async function workflowStatus(draft) {
   })
 }
 
-async function createReviewStatus(draft, status, reason) {
+async function createReviewStatus (draft, status, reason) {
   const doc = await client.create({
     _type: 'workflow.status',
     draft: draft._id,
@@ -31,11 +31,11 @@ async function createReviewStatus(draft, status, reason) {
   return doc
 }
 
-export function PublishApprovedAction(props) {
+export function PublishApprovedAction (props) {
   return PublishAction(props)
 }
 
-export function RejectAction({ id, type, published, draft, onComplete }) {
+export function RejectAction ({id, type, published, draft, onComplete}) {
   if (!draft) return null
   const [reason, setReason] = React.useState('')
   const [isDialogOpen, setDialogOpen] = React.useState(false)
@@ -59,7 +59,7 @@ export function RejectAction({ id, type, published, draft, onComplete }) {
       content: (
         <>
           <h2>Reason</h2>
-          <input type="text" onChange={event => setReason(event.target.value)} />
+          <input type='text' onChange={event => setReason(event.target.value)} />
           <button
             onClick={async () => {
               await createReviewStatus(draft, 'rejected', reason)
@@ -88,7 +88,7 @@ export function RejectAction({ id, type, published, draft, onComplete }) {
   */
 }
 
-export function Approve({ id, type, published, draft, onComplete }) {
+export function Approve ({id, type, published, draft, onComplete}) {
   if (!draft) return null
   const [status, setStatus] = React.useState(null)
   useMemo(async () => {
@@ -107,7 +107,7 @@ export function Approve({ id, type, published, draft, onComplete }) {
   }
 }
 
-export function RequestReview({ id, type, draft, onComplete }) {
+export function RequestReview ({id, type, draft, onComplete}) {
   if (!draft) return null
   const [status, setStatus] = React.useState(null)
   useMemo(async () => {
@@ -129,7 +129,7 @@ export function RequestReview({ id, type, draft, onComplete }) {
 
 // Badges
 
-export function WorkflowBadge({ draft }) {
+export function WorkflowBadge ({draft}) {
   if (!draft) return null
 
   const [status, setStatus] = React.useState(null)

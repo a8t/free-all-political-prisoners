@@ -28,13 +28,12 @@ export default {
       name: 'anchor',
       type: 'string'
     }
-    
   ],
   preview: {
     select: {
       title: 'title'
     },
-    prepare({title}) {
+    prepare ({title}) {
       return {
         title: 'Two column',
         subtitle: title

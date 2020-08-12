@@ -31,7 +31,7 @@ export default {
       subtitle: 'label',
       disabled: 'disabled'
     },
-    prepare({ title, disabled }) {
+    prepare ({title, disabled}) {
       return {
         title: `Hero: ${disabled ? 'DISABLED' : title}`
       }

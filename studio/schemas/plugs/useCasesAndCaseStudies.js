@@ -6,7 +6,6 @@ export default {
     {
       name: 'title',
       type: 'string'
-
     },
     {
       title: 'Case studies',
@@ -16,9 +15,11 @@ export default {
         {
           title: 'Case study',
           type: 'reference',
-          to: [{
-            type: 'caseStudy'
-          }]
+          to: [
+            {
+              type: 'caseStudy'
+            }
+          ]
         }
       ]
     },
@@ -26,10 +27,12 @@ export default {
       title: 'Use Cases',
       name: 'useCases',
       type: 'array',
-      of: [{
-        type: 'reference',
-        to: [{type: 'useCase'}]
-      }]
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'useCase'}]
+        }
+      ]
     }
   ],
   preview: {

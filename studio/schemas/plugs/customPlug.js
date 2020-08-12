@@ -5,14 +5,16 @@ export default {
   fields: [
     {
       title: 'Identifier',
-      description: 'Identifier for the frontend to pick up. Must be one word, lowercase first, no spaces or special characters',
+      description:
+        'Identifier for the frontend to pick up. Must be one word, lowercase first, no spaces or special characters',
       name: 'name',
       type: 'string'
     },
     {
       title: 'CSS Class',
       name: 'className',
-      description: 'If we want to experiment with other layouts for the same plug.  Must be one word, lowercase first, no spaces or special characters',
+      description:
+        'If we want to experiment with other layouts for the same plug.  Must be one word, lowercase first, no spaces or special characters',
       type: 'string'
     },
     {
@@ -26,7 +28,7 @@ export default {
     select: {
       title: 'name'
     },
-    prepare({title}) {
+    prepare ({title}) {
       return {
         title: 'Custom plug',
         subtitle: title

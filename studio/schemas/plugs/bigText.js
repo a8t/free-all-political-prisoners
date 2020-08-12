@@ -14,7 +14,7 @@ export default {
     select: {
       title: 'title'
     },
-    prepare({title}) {
+    prepare ({title}) {
       return {
         title: 'Big Text',
         subtitle: title

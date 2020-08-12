@@ -10,7 +10,7 @@ export default {
     {
       type: 'array',
       name: 'rows',
-      of: [{ type: 'textWithIllustration' }]
+      of: [{type: 'textWithIllustration'}]
     }
   ]
 }

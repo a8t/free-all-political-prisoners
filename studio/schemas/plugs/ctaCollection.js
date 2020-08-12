@@ -14,7 +14,7 @@ export default {
     select: {
       ctas: 'ctaCollection'
     },
-    prepare({ctas}) {
+    prepare ({ctas}) {
       return {
         title: 'CTAs',
         subtitle: ctas && ctas.ctas.map(cta => cta.title).join(', ')

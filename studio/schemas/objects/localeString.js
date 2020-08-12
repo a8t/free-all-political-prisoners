@@ -1,8 +1,8 @@
 const supportedLanguages = [
-  { id: 'en', title: 'English', isDefault: true },
-  { id: 'es', title: 'Spanish' },
-  { id: 'nb', title: 'Norwegian' },
-  { id: 'sv', title: 'Swedish' }
+  {id: 'en', title: 'English', isDefault: true},
+  {id: 'es', title: 'Spanish'},
+  {id: 'nb', title: 'Norwegian'},
+  {id: 'sv', title: 'Swedish'}
 ]
 
 export default {
@@ -12,7 +12,7 @@ export default {
     {
       title: 'Translations',
       name: 'translations',
-      options: { collapsible: true }
+      options: {collapsible: true}
     }
   ],
   fields: supportedLanguages.map(lang => ({
