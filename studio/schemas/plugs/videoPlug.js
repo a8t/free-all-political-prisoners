@@ -19,7 +19,7 @@ export default {
       title: 'title',
       media: 'posterFrame'
     },
-    prepare({title, media}) {
+    prepare ({title, media}) {
       return {
         title: 'Video Plug',
         media,
@@ -96,7 +96,7 @@ export default {
       description: (
         <span>
           Order them by priority.{' '}
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats">
+          <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats'>
             Recomended types
           </a>{' '}
           are Priciwebm and mp4
@@ -116,12 +116,11 @@ export default {
                 media: 'media',
                 type: 'type'
               },
-              prepare(selection) {
+              prepare (selection) {
                 return {
                   title: selection.file,
-                  subtitle: `${Math.round(
-                    selection.size / 1024 / 1024
-                  )}Mb ${selection.type || ''} ${selection.media || ''}`
+                  subtitle: `${Math.round(selection.size / 1024 / 1024)}Mb ${selection.type ||
+                    ''} ${selection.media || ''}`
                 }
               }
             }

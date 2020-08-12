@@ -31,7 +31,7 @@ export default {
     select: {
       title: 'title'
     },
-    prepare({title}) {
+    prepare ({title}) {
       return {
         title: 'Client stories',
         subtitle: title

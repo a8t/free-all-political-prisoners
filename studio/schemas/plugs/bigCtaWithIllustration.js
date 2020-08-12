@@ -2,8 +2,7 @@ export default {
   type: 'object',
   name: 'bigCtaWithIllustration',
   title: 'Big CTA with illustration',
-  description:
-    'Big call-to-action with headline, subtitle, clickable cta text and illustration',
+  description: 'Big call-to-action with headline, subtitle, clickable cta text and illustration',
   fields: [
     {
       name: 'label',
@@ -120,12 +119,9 @@ export default {
           title: 'title',
           features: 'features'
         },
-        prepare({label, title, features}) {
+        prepare ({label, title, features}) {
           return {
-            title:
-              title || label
-                ? `Feature list: ${title || label}`
-                : 'Untitled feature list',
+            title: title || label ? `Feature list: ${title || label}` : 'Untitled feature list',
             subtitle: `Features: ${features.map(f => f.title).join(', ')}±`,
             media: MdList
           }

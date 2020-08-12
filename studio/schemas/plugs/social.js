@@ -1,11 +1,17 @@
 import React from 'react'
-import { TwitterTweetEmbed } from 'react-twitter-embed'
+import {TwitterTweetEmbed} from 'react-twitter-embed'
 
-const Tweet = ({ value: {url} }) =>  {
+const Tweet = ({value: {url}}) => {
   const exp = /\/status\/(\d+)($|[?/])/
-  const [, id] = exp.exec(url) || []
+  const [, id] = exp.exec(url) || []
   if (id) {
-    return <TwitterTweetEmbed className="sliderBoxes" tweetId={id} options={{conversation: 'none', 'hide-thread': true}} />
+    return (
+      <TwitterTweetEmbed
+        className='sliderBoxes'
+        tweetId={id}
+        options={{conversation: 'none', 'hide-thread': true}}
+      />
+    )
   }
   return <React.Fragment />
 }
@@ -38,8 +44,8 @@ export default {
       subtitle: 'service',
       url: 'url'
     },
-    component: Tweet,
-   /*  prepare({title, subtitle}) {
+    component: Tweet
+    /*  prepare({title, subtitle}) {
       return {
         title: `Social: ${title}`,
         subtitle

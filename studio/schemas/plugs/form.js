@@ -40,7 +40,7 @@ export default {
       title: 'title',
       type: 'type'
     },
-    prepare({title, type}) {
+    prepare ({title, type}) {
       return {
         title,
         subtitle: `FORM: ${type}`

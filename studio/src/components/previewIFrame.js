@@ -14,19 +14,25 @@ const PreviewIFrame = () =>
       const url = resolveUrl(displayed)
       return (
         <React.Fragment>
-          {
-            env !== 'development' && <div style={{padding: '0 0.5em'}}>
-              <p>This is your <a href="" target="_blank" rel="noopener noreferrer">production site on Netlify</a>. <a href="/dashboard">Trigger a deploy</a> to see published changes.</p>
+          {env !== 'development' && (
+            <div style={{padding: '0 0.5em'}}>
+              <p>
+                This is your{' '}
+                <a href='' target='_blank' rel='noopener noreferrer'>
+                  production site on Netlify
+                </a>
+                . <a href='/dashboard'>Trigger a deploy</a> to see published changes.
+              </p>
             </div>
-          }
-        <iframe
-          style={{
-            width: '100%',
-            height: '100%'
-          }}
-          frameBorder={'0'}
-          src={url}
-        />
+          )}
+          <iframe
+            style={{
+              width: '100%',
+              height: '100%'
+            }}
+            frameBorder={'0'}
+            src={url}
+          />
         </React.Fragment>
       )
     })

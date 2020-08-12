@@ -20,7 +20,7 @@ export default {
       type: 'array',
       description:
         'These are the different variations (pages) this route will point to in this experiment',
-      of: [{ type: 'variation' }],
+      of: [{type: 'variation'}],
       validation: Rule =>
         Rule.custom(value => {
           if (!value) {

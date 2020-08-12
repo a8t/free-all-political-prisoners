@@ -1,7 +1,7 @@
 import React from 'react'
 import BlockContent from '@sanity/block-content-to-react'
 
-const Preview = ({value: {blocks}}) => (<BlockContent blocks={blocks} />)
+const Preview = ({value: {blocks}}) => <BlockContent blocks={blocks} />
 
 export default {
   type: 'object',
@@ -50,27 +50,29 @@ export default {
       title: 'Items',
       name: 'items',
       type: 'array',
-      of: [{
-        name: 'item',
-        type: 'object',
-        fields: [
-          {
-            name: 'title',
-            type: 'string'
-          },
-          {
-            name: 'content',
-            type: 'blockContent'
-          }
-        ]
-      }]
+      of: [
+        {
+          name: 'item',
+          type: 'object',
+          fields: [
+            {
+              name: 'title',
+              type: 'string'
+            },
+            {
+              name: 'content',
+              type: 'blockContent'
+            }
+          ]
+        }
+      ]
     },
     {
       title: 'Anchor',
       name: 'anchor',
       type: 'string'
     }
-  ],
+  ]
   /* preview: {
     select: {
       title: 'title'

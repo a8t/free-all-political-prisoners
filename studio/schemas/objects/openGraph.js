@@ -37,7 +37,7 @@ export default {
       route: 'route.slug.current',
       link: 'link'
     },
-    prepare({ title, route, link }) {
+    prepare ({title, route, link}) {
       return {
         title,
         subtitle: route ? `Route: /${route}/` : link ? `External link: ${link}` : 'Not set'

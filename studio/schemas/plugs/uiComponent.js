@@ -12,7 +12,7 @@ export default {
     select: {
       title: 'name'
     },
-    prepare({ title }) {
+    prepare ({title}) {
       return {
         title: `UI reference: ${title}`
       }

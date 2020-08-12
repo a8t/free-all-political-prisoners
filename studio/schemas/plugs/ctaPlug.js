@@ -33,7 +33,7 @@ export default {
       title: 'title',
       subtitle: 'label'
     },
-    prepare({ title, subtitle }) {
+    prepare ({title, subtitle}) {
       return {
         title: `Call to action: ${title || 'Title not set'}`,
         subtitle

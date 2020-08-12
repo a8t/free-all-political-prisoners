@@ -13,8 +13,8 @@ export default {
     }
   ],
   preview: {
-    select: { title: 'title' },
-    prepare({ title }) {
+    select: {title: 'title'},
+    prepare ({title}) {
       return {
         title: `Pricing module: ${title}`
       }

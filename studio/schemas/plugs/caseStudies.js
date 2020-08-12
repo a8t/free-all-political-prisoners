@@ -6,7 +6,6 @@ export default {
     {
       name: 'title',
       type: 'string'
-
     },
     // {
     //   name: 'subtitle',
@@ -21,9 +20,11 @@ export default {
         {
           title: 'Case study',
           type: 'reference',
-          to: [{
-            type: 'caseStudy'
-          }]
+          to: [
+            {
+              type: 'caseStudy'
+            }
+          ]
         }
       ]
     }

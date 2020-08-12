@@ -1,11 +1,14 @@
 import client from 'part:@sanity/base/client'
-import { MdLink } from 'react-icons/lib/md'
+import {MdLink} from 'react-icons/lib/md'
 
-function myAsyncSlugifier(input) {
+function myAsyncSlugifier (input) {
   const query = '*[_id == $id][0]'
   const params = {id: input._ref}
   return client.fetch(query, params).then(doc => {
-    return doc.title.toLowerCase().replace(/\s+/g, '-').slice(0, 200)
+    return doc.title
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .slice(0, 200)
   })
 }
 
@@ -15,33 +18,33 @@ export default {
   title: 'Landing page routes',
   icon: MdLink,
   initialValue: {
-    useSiteTitle: false,
+    useSiteTitle: false
   },
   fieldsets: [
     {
       title: 'Visibility',
-      name: 'visibility',
-    },
+      name: 'visibility'
+    }
   ],
   fields: [
     {
       name: 'page',
       type: 'reference',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
       description: 'The page you want to appear at this path. Remember it needs to be published.',
       to: [
         {
-          type: 'page',
-        },
-      ],
+          type: 'page'
+        }
+      ]
     },
     {
       name: 'slug',
       type: 'slug',
       description: 'This is the website path the page will accessible on',
       title: 'Path',
-      validation: (Rule) =>
-        Rule.required().custom((slug) => {
+      validation: Rule =>
+        Rule.required().custom(slug => {
           if (slug && slug.current && slug.current === '/') {
             return 'Cannot be /'
           }
@@ -58,13 +61,13 @@ export default {
       description:
         'Use the site settings title as page title instead of the title on the referenced page',
       name: 'useSiteTitle',
-      type: 'boolean',
+      type: 'boolean'
     },
     {
       title: 'Open graph',
       name: 'openGraph',
       description: 'These values populate meta tags',
-      type: 'openGraph',
+      type: 'openGraph'
     },
     {
       title: 'Include in sitemap',
@@ -100,7 +103,7 @@ export default {
       type: 'string',
       title: 'Campaign',
       description: 'UTM for campaings'
-    },
+    }
     /*
     // This can be used by a server-side rendered website. We plan to figure out proper JAMstack support
     {
@@ -112,13 +115,13 @@ export default {
   preview: {
     select: {
       title: 'slug.current',
-      subtitle: 'page.title',
+      subtitle: 'page.title'
     },
-    prepare({ title, subtitle }) {
+    prepare ({title, subtitle}) {
       return {
         title: ['/', title].join(''),
-        subtitle,
+        subtitle
       }
-    },
-  },
+    }
+  }
 }

@@ -10,14 +10,14 @@ export default {
     {
       type: 'array',
       name: 'columns',
-      of: [{ type: 'ctaPlug' }]
+      of: [{type: 'ctaPlug'}]
     }
   ],
   preview: {
     select: {
       title: 'title'
     },
-    prepare({ title }) {
+    prepare ({title}) {
       return {
         title: `CTA columns: ${title}`
       }

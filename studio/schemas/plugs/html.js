@@ -23,7 +23,7 @@ export default {
     select: {
       title: 'title'
     },
-    prepare({title}) {
+    prepare ({title}) {
       return {
         title,
         subtitle: 'Custom HTML'

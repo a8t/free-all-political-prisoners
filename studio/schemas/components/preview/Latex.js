@@ -1,8 +1,8 @@
-import React, { useState, useMemo, useCallback } from 'react'
+import React, {useState, useMemo, useCallback} from 'react'
 import KaTeX from 'katex'
 import 'katex/dist/katex.min.css?raw'
 
-const LatexRender = ({ isInline = false, latex = '' }) => {
+const LatexRender = ({isInline = false, latex = ''}) => {
   const [html, setHtml] = useState('')
   const createHtml = () => {
     setHtml(
@@ -15,9 +15,9 @@ const LatexRender = ({ isInline = false, latex = '' }) => {
 
   useMemo(createHtml, [latex, isInline])
   if (isInline) {
-    return <span dangerouslySetInnerHTML={{ __html: html }} />
+    return <span dangerouslySetInnerHTML={{__html: html}} />
   }
-  return <div dangerouslySetInnerHTML={{ __html: html }} />
+  return <div dangerouslySetInnerHTML={{__html: html}} />
 }
 
 export default LatexRender

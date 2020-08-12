@@ -33,7 +33,7 @@ export default {
       title: 'title',
       templates: 'templates'
     },
-    prepare({title, templates}) {
+    prepare ({title, templates}) {
       return {
         title: 'Starter templates',
         subtitle: templates ? `${title} ${templates.length} Templates` : 'No templates'

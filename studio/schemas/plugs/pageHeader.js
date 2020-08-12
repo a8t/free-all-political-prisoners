@@ -7,7 +7,7 @@ export default {
       title: 'title',
       illustration: 'illustration'
     },
-    prepare({ title, illustration }) {
+    prepare ({title, illustration}) {
       return {
         title: 'Page header',
         subtitle: title,

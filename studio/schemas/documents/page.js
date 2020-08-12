@@ -6,15 +6,15 @@ export default {
     {
       name: 'title',
       type: 'string',
-      title: 'Title',
+      title: 'Title'
     },
     {
       name: 'navMenu',
       type: 'reference',
       title: 'Navigation menu',
       // weak: true, // Uncomment if you want to be able to delete navigation even though pages refer to it
-      to: [{ type: 'navigationMenu' }],
-      description: 'Which nav menu should be shown, if any',
+      to: [{type: 'navigationMenu'}],
+      description: 'Which nav menu should be shown, if any'
     },
     {
       name: 'content',
@@ -22,13 +22,13 @@ export default {
       title: 'Page sections',
       description: 'Add, edit, and reorder sections',
       of: [
-        { type: 'pricing' },
-        { type: 'uiComponentRef' },
-        { type: 'hero' },
-        { type: 'infoRows' },
-        { type: 'ctaColumns' },
-        { type: 'ctaPlug' },
-      ],
-    },
-  ],
+        {type: 'pricing'},
+        {type: 'uiComponentRef'},
+        {type: 'hero'},
+        {type: 'infoRows'},
+        {type: 'ctaColumns'},
+        {type: 'ctaPlug'}
+      ]
+    }
+  ]
 }

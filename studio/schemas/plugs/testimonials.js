@@ -30,7 +30,7 @@ export default {
       name: 'name',
       media: 'image'
     },
-    prepare({name, media}) {
+    prepare ({name, media}) {
       return {
         title: 'Testimonial',
         subtitle: name,

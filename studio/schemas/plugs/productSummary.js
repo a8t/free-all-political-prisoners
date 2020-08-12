@@ -10,12 +10,10 @@ export default {
     {
       name: 'title',
       type: 'string'
-
     },
     {
       name: 'subtitle',
       type: 'string'
-
     },
     {
       name: 'features',
@@ -30,9 +28,11 @@ export default {
       name: 'ctas',
       title: 'Call to actions',
       type: 'array',
-      of: [{
-        type: 'cta'
-      }]
+      of: [
+        {
+          type: 'cta'
+        }
+      ]
     },
     {
       title: 'Anchor',
@@ -44,9 +44,9 @@ export default {
     select: {
       title: 'title',
       subtitle: 'subtitle',
-      media: 'logo',
+      media: 'logo'
     },
-    prepare({title, subtitle, media}) {
+    prepare ({title, subtitle, media}) {
       return {
         title,
         subtitle: `Product summary: ${subtitle}`,

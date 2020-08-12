@@ -13,9 +13,9 @@ export default {
     select: {
       image: 'image'
     },
-    prepare({ image }) {
+    prepare ({image}) {
       if (!image) {
-        return { title: 'Illustration with no image' }
+        return {title: 'Illustration with no image'}
       }
       return {
         title: `Illustration`,
