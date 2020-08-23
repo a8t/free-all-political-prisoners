@@ -9,8 +9,6 @@ import MobileMenu from "./MobileMenu";
 import useHeaderScrollThreshold from "./useHeaderScrollThreshold";
 
 const Header = ({ isHomepage }) => {
-  const [shouldShow, setShouldShow] = useState(false);
-
   const { isPastHeaderScrollThreshold } = useHeaderScrollThreshold();
 
   return (
@@ -23,7 +21,7 @@ const Header = ({ isHomepage }) => {
         }`}
         style={{ "--bg-opacity": isPastHeaderScrollThreshold ? 1 : 0 } as CSSProperties}
       >
-        <div className="container px-3 sm:px-6 m-auto flex w-full xl:grid grid-cols-3 justify-between md:justify-end items-center border-b-1 border-gray-100 py-4 ">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex xl:grid grid-cols-3 justify-between md:justify-end items-center border-b-1 border-gray-100 py-4 ">
           <Link to="/" className="flex flex-1">
             <img className="max-h-10" src={ichrp} alt="Workflow" />
             <span
