@@ -51,7 +51,7 @@ function Hero(props) {
               There are over 600 political prisoners in the Philippines.{" "}
               <br className="hidden md:flex" />
               Join the movement to
-              <span className="text-red-500"> set them free</span>.
+              <span className="font-bold"> set them free</span>.
             </p>
           </div>
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-end">
