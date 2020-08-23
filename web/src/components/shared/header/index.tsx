@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import React, { useState, CSSProperties } from "react";
+import classNames from "classnames";
 
 import { ichrp } from "../../../images";
 
@@ -7,13 +8,13 @@ import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 import useHeaderScrollThreshold from "./useHeaderScrollThreshold";
 
-const Header = () => {
+const Header = ({ isHomepage }) => {
   const [shouldShow, setShouldShow] = useState(false);
 
   const { isPastHeaderScrollThreshold } = useHeaderScrollThreshold();
 
   return (
-    <div className="fixed top-0 z-10 w-full">
+    <div className={classNames("top-0 z-10 w-full", isHomepage ? "fixed" : "sticky pb-12")}>
       <div
         className={`flex mx-auto relative bg-opacity-25 bg-gray-50 transition-all ease-in duration-200 ${
           isPastHeaderScrollThreshold

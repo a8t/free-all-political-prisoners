@@ -1,11 +1,13 @@
-import { useWindowScroll } from "react-use";
+import { useWindowScroll, useLocation } from "react-use";
 
 const SCROLL_THRESHOLD = 10;
 
 export default function useHeaderScrollThreshold() {
+  const { pathname } = useLocation();
+
   const { y } = useWindowScroll();
 
-  const isPastHeaderScrollThreshold = y > SCROLL_THRESHOLD;
+  const isPastHeaderScrollThreshold = pathname === "/" ? y > SCROLL_THRESHOLD : true;
 
   return { isPastHeaderScrollThreshold };
 }
