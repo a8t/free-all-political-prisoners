@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ichrp from "../../../images/ichrp.png";
 import Transition from "../../utility/Transition";
+import { ichrp } from "../../../images";
 
 const MobileMenu = () => {
   const [shouldShow, setShouldShow] = useState(false);
