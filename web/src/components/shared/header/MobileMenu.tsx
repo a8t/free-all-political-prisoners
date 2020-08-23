@@ -7,7 +7,6 @@ const MobileMenu = () => {
 
   return (
     <>
-      <span className="md:hidden text-gray-100 font-extrabold text-2xl italic">Set Them Free</span>
       <div className="-mr-2 -my-2 md:hidden">
         <button
           onClick={() => setShouldShow(!shouldShow)}

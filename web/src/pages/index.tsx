@@ -4,6 +4,7 @@ import Errors from "../components/shared/errors";
 import Page from "../templates/page";
 import Header from "../components/shared/header";
 import Hero from "../components/homepage/hero";
+import Layout from "../components/shared/layout";
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -69,10 +70,10 @@ const IndexPage = (props) => {
   }
 
   return (
-    <>
+    <Layout>
       <Header />
       <Hero />
-    </>
+    </Layout>
   );
 };
 

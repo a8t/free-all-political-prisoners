@@ -1,6 +1,8 @@
 import { Link } from "gatsby";
-import React, { useState } from "react";
-import ichrp from "../../../images/ichrp.png";
+import React, { useState, CSSProperties } from "react";
+
+import { ichrp } from "../../../images";
+
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 import useHeaderScrollThreshold from "./useHeaderScrollThreshold";
@@ -18,13 +20,13 @@ const Header = () => {
             ? "border-gray-200 border-opacity-100 border-b-2"
             : "border-gray-900 border-opacity-0 border-b-0"
         }`}
-        style={{ "--bg-opacity": isPastHeaderScrollThreshold ? 1 : 0 }}
+        style={{ "--bg-opacity": isPastHeaderScrollThreshold ? 1 : 0 } as CSSProperties}
       >
         <div className="container px-3 sm:px-6 m-auto flex w-full xl:grid grid-cols-3 justify-between md:justify-end items-center border-b-1 border-gray-100 py-4 ">
-          <Link to="/" className="flex">
+          <Link to="/" className="flex flex-1">
             <img className="max-h-10" src={ichrp} alt="Workflow" />
             <span
-              className={`hidden md:flex ml-2 font-extrabold text-2xl italic ${
+              className={`mx-auto md:ml-2 flex items-center font-extrabold text-2xl italic ${
                 isPastHeaderScrollThreshold ? "text-gray-700 " : "text-gray-100"
               }`}
             >
