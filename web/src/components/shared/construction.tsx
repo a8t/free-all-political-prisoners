@@ -10,7 +10,6 @@ export default function UnderConstruction() {
     false
   );
 
-  localStorage.clear();
   return (
     <Transition
       show={!isDismissed}
