@@ -8,25 +8,32 @@ import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 import useHeaderScrollThreshold from "./useHeaderScrollThreshold";
 
-const Header = ({ isHomepage }) => {
+const Header = ({ shouldHeaderStartTransparent }) => {
   const { isPastHeaderScrollThreshold } = useHeaderScrollThreshold();
 
+  const shouldHeaderBeTransparent = shouldHeaderStartTransparent && !isPastHeaderScrollThreshold;
+
   return (
-    <div className={classNames("top-0 z-10 w-full", isHomepage ? "fixed" : "sticky pb-12")}>
+    <div
+      className={classNames(
+        "top-0 z-10 w-full",
+        shouldHeaderStartTransparent ? "fixed" : "sticky pb-12"
+      )}
+    >
       <div
         className={`flex mx-auto relative bg-opacity-25 bg-gray-50 transition-all ease-in duration-200 ${
-          isPastHeaderScrollThreshold
-            ? "border-gray-200 border-opacity-100 border-b-2"
-            : "border-gray-900 border-opacity-0 border-b-0"
+          shouldHeaderBeTransparent
+            ? "border-gray-900 border-opacity-0 border-b-0"
+            : "border-gray-200 border-opacity-100 border-b-2"
         }`}
-        style={{ "--bg-opacity": isPastHeaderScrollThreshold ? 1 : 0 } as CSSProperties}
+        style={{ "--bg-opacity": shouldHeaderBeTransparent ? 0 : 1 } as CSSProperties}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex xl:grid grid-cols-3 justify-between md:justify-end items-center border-b-1 border-gray-100 py-4 ">
           <Link to="/" className="flex flex-1">
             <img className="max-h-10" src={ichrp} alt="Workflow" />
             <span
               className={`mx-auto md:ml-2 flex items-center font-extrabold text-2xl italic ${
-                isPastHeaderScrollThreshold ? "text-gray-700 " : "text-gray-100"
+                shouldHeaderBeTransparent ? "text-gray-100" : "text-gray-700 "
               }`}
             >
               Set Them Free
@@ -35,7 +42,7 @@ const Header = ({ isHomepage }) => {
 
           <MobileMenu />
 
-          <DesktopMenu />
+          <DesktopMenu shouldHeaderBeTransparent={shouldHeaderBeTransparent} />
 
           <span className="hidden md:flex rounded-md shadow-sm xl:ml-auto">
             <a

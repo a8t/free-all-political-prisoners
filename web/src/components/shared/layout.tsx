@@ -11,7 +11,7 @@ export default function Layout({ children, isHomepage = false }) {
       <Helmet>
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </Helmet>
-      <Header isHomepage={isHomepage} />
+      <Header shouldHeaderStartTransparent={isHomepage} />
       {isHomepage ? (
         <main className="flex-1">{children}</main>
       ) : (

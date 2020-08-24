@@ -11,14 +11,14 @@ export default function DesktopMenuItem({
   items,
   customRender = null,
   linkTo,
+  shouldHeaderBeTransparent,
 }: {
   name: string;
   items: { title: string; body: string; icon?: React.ReactElement }[];
   customRender?: React.ReactElement;
   linkTo: string;
+  shouldHeaderBeTransparent: boolean;
 }) {
-  const { isPastHeaderScrollThreshold } = useHeaderScrollThreshold();
-
   const [shouldShow, setShouldShow] = useState(false);
   const open = () => setShouldShow(true);
   const close = () => setShouldShow(false);
@@ -39,16 +39,16 @@ export default function DesktopMenuItem({
           // onClick={open}
           className={`group inline-flex items-center mx-3 border-b-2 px-4 py-2 text-base leading-6 font-medium focus:outline-none
             ${
-              isPastHeaderScrollThreshold
-                ? "text-gray-900 hover:text-gray-700 hover:border-gray-600 focus:text-gray-600 focus:border-gray-600 "
-                : "text-gray-400 hover:text-gray-200 hover:border-gray-300 focus:text-gray-200 focus:border-gray-300 "
+              shouldHeaderBeTransparent
+                ? "text-gray-400 hover:text-gray-200 hover:border-gray-300 focus:text-gray-200 focus:border-gray-300 "
+                : "text-gray-900 hover:text-gray-700 hover:border-gray-600 focus:text-gray-600 focus:border-gray-600 "
             }
             transition ease-in-out duration-150  border-transparent 
             ${shouldShow ? "border-gray-400" : ""}`}
         >
           <span
             className={`uppercase tracking-widest text-sm ${
-              shouldShow ? (isPastHeaderScrollThreshold ? "text-gray-500" : "text-gray-200") : ""
+              shouldShow ? (shouldHeaderBeTransparent ? "text-gray-200" : "text-gray-500") : ""
             }`}
           >
             {name}

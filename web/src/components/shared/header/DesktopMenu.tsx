@@ -2,9 +2,10 @@ import React from "react";
 import { FaRegEnvelope, FaQuestion, FaRegCalendarAlt } from "react-icons/fa";
 import DesktopMenuItem from "./DesktopMenuItem";
 
-const DesktopMenu = () => (
+const DesktopMenu = ({ shouldHeaderBeTransparent }) => (
   <nav className="hidden md:flex justify-center self-center md:ml-auto md:mr-2 xl:mr-auto">
     <DesktopMenuItem
+      shouldHeaderBeTransparent={shouldHeaderBeTransparent}
       linkTo="/act"
       name="Act"
       items={[
@@ -21,6 +22,7 @@ const DesktopMenu = () => (
       ]}
     />
     <DesktopMenuItem
+      shouldHeaderBeTransparent={shouldHeaderBeTransparent}
       linkTo="/learn"
       name="Learn"
       items={[
@@ -60,6 +62,7 @@ const DesktopMenu = () => (
       ]}
     />
     <DesktopMenuItem
+      shouldHeaderBeTransparent={shouldHeaderBeTransparent}
       linkTo="/join"
       name="Join"
       items={[
