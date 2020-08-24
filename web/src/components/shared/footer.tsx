@@ -5,7 +5,6 @@ import { Link } from "gatsby";
 const FooterLink = (props) => {
   return (
     <Link
-      href="#"
       className={classNames("px-5 py-2", "text-base leading-6 text-gray-500 hover:text-gray-900")}
       {...props}
     />

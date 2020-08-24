@@ -5,6 +5,7 @@ import DesktopMenuItem from "./DesktopMenuItem";
 const DesktopMenu = () => (
   <nav className="hidden md:flex justify-center self-center md:ml-auto md:mr-2 xl:mr-auto">
     <DesktopMenuItem
+      linkTo="/act"
       name="Act"
       items={[
         {
@@ -20,6 +21,7 @@ const DesktopMenu = () => (
       ]}
     />
     <DesktopMenuItem
+      linkTo="/learn"
       name="Learn"
       items={[
         {
@@ -58,6 +60,7 @@ const DesktopMenu = () => (
       ]}
     />
     <DesktopMenuItem
+      linkTo="/join"
       name="Join"
       items={[
         {

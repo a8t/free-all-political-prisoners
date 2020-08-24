@@ -4,15 +4,18 @@ import { useClickAway } from "react-use";
 import { FaBook } from "react-icons/fa";
 import { useHotkeys } from "react-hotkeys-hook";
 import useHeaderScrollThreshold from "./useHeaderScrollThreshold";
+import { Link } from "gatsby";
 
 export default function DesktopMenuItem({
   name,
   items,
   customRender = null,
+  linkTo,
 }: {
   name: string;
   items: { title: string; body: string; icon?: React.ReactElement }[];
   customRender?: React.ReactElement;
+  linkTo: string;
 }) {
   const { isPastHeaderScrollThreshold } = useHeaderScrollThreshold();
 
@@ -29,11 +32,12 @@ export default function DesktopMenuItem({
 
   return (
     <div>
-      <button
-        type="button"
-        // open after 100ms in case another one is open...
-        onClick={open}
-        className={`group inline-flex items-center mx-3 border-b-2 px-4 py-2 text-base leading-6 font-medium focus:outline-none
+      <Link to={linkTo}>
+        <button
+          type="button"
+          // open after 100ms in case another one is open...
+          // onClick={open}
+          className={`group inline-flex items-center mx-3 border-b-2 px-4 py-2 text-base leading-6 font-medium focus:outline-none
             ${
               isPastHeaderScrollThreshold
                 ? "text-gray-900 hover:text-gray-700 hover:border-gray-600 focus:text-gray-600 focus:border-gray-600 "
@@ -41,15 +45,16 @@ export default function DesktopMenuItem({
             }
             transition ease-in-out duration-150  border-transparent 
             ${shouldShow ? "border-gray-400" : ""}`}
-      >
-        <span
-          className={`uppercase tracking-widest text-sm ${
-            shouldShow ? (isPastHeaderScrollThreshold ? "text-gray-500" : "text-gray-200") : ""
-          }`}
         >
-          {name}
-        </span>
-      </button>
+          <span
+            className={`uppercase tracking-widest text-sm ${
+              shouldShow ? (isPastHeaderScrollThreshold ? "text-gray-500" : "text-gray-200") : ""
+            }`}
+          >
+            {name}
+          </span>
+        </button>
+      </Link>
 
       <Transition
         show={shouldShow}
