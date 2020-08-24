@@ -65,7 +65,7 @@ const IndexPage = (props) => {
   }
 
   return (
-    <Layout textWhite={false}>
+    <Layout>
       <SEO
         title={site.title || "Missing title"}
         description={site.description || "Missing description"}

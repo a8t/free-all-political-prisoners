@@ -24,6 +24,7 @@ import {
 import ItemsSection from "../components/homepage/itemsSection";
 import { casambre, freekarina, ichrpCanadaLogo, cpshr, ucc } from "../images";
 import { ImageSection } from "../components/homepage/imageSection";
+import SEO from "../components/seo";
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -90,6 +91,7 @@ const IndexPage = (props) => {
 
   return (
     <Layout isHomepage>
+      <SEO title="Set Them Free | ICHRP Canada" />
       <Hero />
       <div className="bg-white">
         <div className="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
