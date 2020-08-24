@@ -19,7 +19,7 @@ const Footer = () => (
         <FooterLink to="/learn">Learn</FooterLink>
         <FooterLink to="/act">Act</FooterLink>
         <FooterLink to="/join">Join</FooterLink>
-        <FooterLink to="/donate">Donate</FooterLink>
+        <FooterLink to="https://www.canadahelps.org/en/dn/m/50517/donation">Donate</FooterLink>
       </nav>
       <div className="mt-8 flex justify-center">
         <a href="htts://facebook.com/ichrpcanada" className="text-gray-400 hover:text-gray-500">

@@ -10,7 +10,7 @@ import { TopWave, BottomWave } from "../components/page-builder/wave";
 
 import GraphQLErrorList from "../components/shared/graphql-error-list";
 import SEO from "../components/seo";
-import Layout from "../containers/layout";
+import Layout from "../components/shared/layout";
 
 export const query = graphql`
   query PageTemplateQuery($id: String!) {
@@ -110,7 +110,7 @@ const Page = (props) => {
   const pageTitle = data.route && !data.route.useSiteTitle && page.title;
 
   return (
-    <Layout navMenuItems={menuItems} textWhite={true}>
+    <Layout>
       <SEO
         title={pageTitle}
         description={site.description}

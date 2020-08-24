@@ -39,7 +39,7 @@ const Header = ({ isHomepage }) => {
 
           <span className="hidden md:flex rounded-md shadow-sm xl:ml-auto">
             <a
-              href="#"
+              href="https://www.canadahelps.org/en/dn/m/50517/donation"
               className="whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-700 transition ease-in-out duration-150"
             >
               Donate

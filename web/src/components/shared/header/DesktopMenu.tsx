@@ -5,6 +5,21 @@ import DesktopMenuItem from "./DesktopMenuItem";
 const DesktopMenu = () => (
   <nav className="hidden md:flex justify-center self-center md:ml-auto md:mr-2 xl:mr-auto">
     <DesktopMenuItem
+      name="Act"
+      items={[
+        {
+          title: "Calendar of Activities",
+          body: "Learn about upcoming webinars, days of action, and more.",
+          icon: <FaRegCalendarAlt className="w-6 h-6" />,
+        },
+        {
+          title: "Write",
+          body: "Write a letter",
+          icon: <FaRegEnvelope className="w-6 h-6" />,
+        },
+      ]}
+    />
+    <DesktopMenuItem
       name="Learn"
       items={[
         {
@@ -39,21 +54,6 @@ const DesktopMenu = () => (
               />
             </svg>
           ),
-        },
-      ]}
-    />
-    <DesktopMenuItem
-      name="Act"
-      items={[
-        {
-          title: "Calendar of Activities",
-          body: "Learn about upcoming webinars, days of action, and more.",
-          icon: <FaRegCalendarAlt className="w-6 h-6" />,
-        },
-        {
-          title: "Write",
-          body: "Write a letter",
-          icon: <FaRegEnvelope className="w-6 h-6" />,
         },
       ]}
     />

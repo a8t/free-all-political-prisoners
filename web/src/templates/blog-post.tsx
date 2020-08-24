@@ -4,7 +4,7 @@ import Container from "../components/shared/container";
 import GraphQLErrorList from "../components/shared/graphql-error-list";
 import BlogPost from "../components/blog/blog-post";
 import SEO from "../components/seo";
-import Layout from "../containers/layout";
+import Layout from "../components/shared/layout";
 import { toPlainText } from "../lib/helpers";
 
 export const query = graphql`
@@ -61,7 +61,7 @@ const BlogPostTemplate = (props) => {
   const { data, errors } = props;
   const post = data && data.post;
   return (
-    <Layout textWhite={true}>
+    <Layout>
       {errors && <SEO title="GraphQL Error" />}
       {post && (
         <SEO

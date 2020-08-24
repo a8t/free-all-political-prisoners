@@ -9,7 +9,7 @@ import BlogPostPreviewList from "../components/blog/blog-post-preview-list";
 import Container from "../components/shared/container";
 import GraphQLErrorList from "../components/shared/graphql-error-list";
 import SEO from "../components/seo";
-import Layout from "../containers/layout";
+import Layout from "../components/shared/layout";
 
 export const query = graphql`
   query IndexPageQuery {
