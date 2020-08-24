@@ -1,5 +1,6 @@
 export const cover = require("./cover.jpg");
 export const hero = require("./hero.png");
+export const ogImage = require("./ogImage.png");
 export const ichrp = require("./ichrp.png");
 export const casambre = require("./casambre.jpg");
 export const freekarina = require("./freekarina.png");

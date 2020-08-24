@@ -4,6 +4,7 @@ import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 import { imageUrlFor } from "../lib/image-url";
 import { buildImageObj } from "../lib/helpers";
+import { ogImage } from "../images";
 
 // https://ogp.me
 
@@ -38,7 +39,7 @@ function SEO({
             meta={[
               {
                 name: "google-site-verification",
-                content: "7MfJFsxBVui5UlEBExUFeMW9-Q6g9fPgoaxwzvbqaV0",
+                content: "lEoZf9zJPZwAQzH6YSBgRLpZv6elTFGgbnje0kO8wOI",
               },
               {
                 name: "description",
@@ -58,7 +59,11 @@ function SEO({
               },
               {
                 property: "og:image",
-                content: metaImage,
+                content: ogImage,
+              },
+              {
+                property: "twitter:img:src",
+                content: ogImage,
               },
               {
                 name: "twitter:card",
