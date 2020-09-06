@@ -38,5 +38,17 @@ module.exports = {
         overlayDrafts: !isProd,
       },
     },
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+      apiKey: `keyZdoRoEI8YclsV8`,
+      tables: [
+        {
+          baseId: `appTS75FBD9SHpRjX`,
+          tableName: `Prisoners`
+        }
+      ]
+      }
+    },
   ],
 };

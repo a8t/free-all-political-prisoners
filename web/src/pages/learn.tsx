@@ -2,17 +2,59 @@ import React from "react";
 
 import Layout from "../components/shared/layout";
 import SEO from "../components/seo";
+import { useStaticQuery, graphql } from "gatsby";
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="Learn | Set Them Free | ICHRP Canada" />
 
-    <main className="prose">
-      <h1>Learn</h1>
+const LearnPage = () => {
 
-      <p>This page is under construction. Please check back soon!</p>
-    </main>
-  </Layout>
-);
+  const prisoners = useStaticQuery(graphql`
+  query prisonerData {
+    allAirtable(filter: {data: {Priority_Release: {eq: true}}}) {
+      edges {
+        node {
+          data {
+            AgeBracket
+            ArrestPlace
+            Charges
+            CityDetained
+            Date_of_Arrest(difference: "", formatString: "", locale: "", fromNow: false)
+            DetCenter
+            DetPosition
+            Details
+            FirstName
+            Full_name
+            Gender
+            MiddleName
+            LastName
+            Priority_Release
+            Organizational_Affiliation
+            ProvinceDetained
+            RegionDetained
+            Years_Detained
+            _xxPrisonerxSector
+          }
+        }
+      }
+    }
+  }
+  
+  `);
 
-export default NotFoundPage;
+  const prisonerData = prisoners.allAirtable.edges;
+
+  return (
+
+    <Layout>
+      <SEO title="Learn | Set Them Free | ICHRP Canada" />
+
+      <main className="prose">
+        <h1>Learn</h1>
+
+        <p>This page is under construction. Please check back soon!</p>
+
+      </main>
+    </Layout>
+  );
+}
+
+export default LearnPage;
