@@ -41,7 +41,7 @@ module.exports = {
     {
       resolve: `gatsby-source-airtable`,
       options: {
-      apiKey: `keyZdoRoEI8YclsV8`,
+      apiKey: `keyfortheAPI`,
       tables: [
         {
           baseId: `appTS75FBD9SHpRjX`,
