@@ -1,5 +1,5 @@
 import React from "react";
-
+import InfoRows from "../components/page-builder/InfoRows";
 import Layout from "../components/shared/layout";
 import SEO from "../components/seo";
 import { useStaticQuery, graphql } from "gatsby";
@@ -42,6 +42,8 @@ const LearnPage = () => {
 
   const prisonerData = prisoners.allAirtable.edges;
 
+  console.log (prisonerData);
+
   return (
 
     <Layout>
@@ -51,6 +53,11 @@ const LearnPage = () => {
         <h1>Learn</h1>
 
         <p>This page is under construction. Please check back soon!</p>
+
+        <InfoRows
+          title="Hello"
+          rows={ prisonerData }
+        />
 
       </main>
     </Layout>
