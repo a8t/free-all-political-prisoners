@@ -31,9 +31,9 @@ const InfoRow = (props) => {
   return (
     <div className={"flex flex-wrap pb-6"}>
       <div className={"w-5/6 p-6 " + sizeClass}>
-        <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">{props.node.data.Full_name}</h3>
+        <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">{props.title}</h3>
         <p className="text-gray-600 mb-8">
-          {props.node.data.Details}
+          <PortableText blocks={props.text} />
         </p>
       </div>
       {img && <div className={"w-full " + sizeClass}>{img}</div>}
@@ -48,9 +48,9 @@ const InfoRowFlipped = (props) => {
     <div className={"flex flex-wrap pb-6 flex-col-reverse sm:flex-row"}>
       {img && <div className={"w-full " + sizeClass}>{img}</div>}
       <div className={"w-5/6 p-6 " + sizeClass}>
-        <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">{props.node.data.Full_name}</h3>
+        <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">{props.title}</h3>
         <p className="text-gray-600 mb-8">
-          {props.node.data.Details}
+          <PortableText blocks={props.text} />
         </p>
       </div>
     </div>
@@ -61,7 +61,6 @@ const InfoRows = (props) => {
   const contentRows = (props.rows || [])
     .filter((r) => !r.disabled)
     .map((r, i) => {
-      console.log(r);
       return i % 2 === 0 ? <InfoRow key={r._key} {...r} /> : <InfoRowFlipped key={r._key} {...r} />;
     });
 

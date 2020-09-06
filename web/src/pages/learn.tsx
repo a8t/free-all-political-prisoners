@@ -1,5 +1,6 @@
 import React from "react";
 import InfoRows from "../components/page-builder/InfoRows";
+import PrisonerRows from "../components/learn/prisonerInfo"
 import Layout from "../components/shared/layout";
 import SEO from "../components/seo";
 import { useStaticQuery, graphql } from "gatsby";
@@ -42,22 +43,23 @@ const LearnPage = () => {
 
   const prisonerData = prisoners.allAirtable.edges;
 
-  console.log (prisonerData);
+  console.log(prisonerData);
 
   return (
 
     <Layout>
       <SEO title="Learn | Set Them Free | ICHRP Canada" />
 
-      <main className="prose">
-        <h1>Learn</h1>
-
-        <p>This page is under construction. Please check back soon!</p>
-
-        <InfoRows
-          title="Hello"
-          rows={ prisonerData }
+      <main className="mainDiv">
+      <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          Urgent Release Prisoners
+        </h1>
+        
+        <PrisonerRows
+          rows={prisonerData}
         />
+
+
 
       </main>
     </Layout>
