@@ -4,10 +4,11 @@ import Header from "./header";
 import Footer from "./footer";
 import "./layout.css";
 import UnderConstruction from "./construction";
+import { cn } from "../../lib/helpers";
 
-export default function Layout({ children, isHomepage = false }) {
+export default function Layout({ children, rootClassnames = "", isHomepage = false }) {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className={cn("min-h-screen flex flex-col", rootClassnames)}>
       <Helmet>
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </Helmet>
