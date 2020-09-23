@@ -3,6 +3,9 @@ import classNames from "classnames";
 import { Link } from "gatsby";
 
 const FooterLink = (props) => {
+  if (props.external) {
+  }
+
   return (
     <Link
       className={classNames("px-5 py-2", "text-base leading-6 text-gray-500 hover:text-gray-900")}
@@ -15,10 +18,15 @@ const Footer = () => (
   <footer className="bg-gray-100 mt-8">
     <div className="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
       <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
-        <FooterLink to="/learn">Learn</FooterLink>
         <FooterLink to="/act">Act</FooterLink>
+        <FooterLink to="/learn">Learn</FooterLink>
         <FooterLink to="/join">Join</FooterLink>
-        <FooterLink to="https://www.canadahelps.org/en/dn/m/50517/donation">Donate</FooterLink>
+        <a
+          href="https://www.canadahelps.org/en/dn/m/50517/donation"
+          className="px-5 py-2 text-base leading-6 text-gray-500 hover:text-gray-900"
+        >
+          Donate
+        </a>
       </nav>
       <div className="mt-8 flex justify-center">
         <a href="htts://facebook.com/ichrpcanada" className="text-gray-400 hover:text-gray-500">
