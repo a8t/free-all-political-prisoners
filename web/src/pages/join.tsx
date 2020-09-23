@@ -180,7 +180,7 @@ const NotFoundPage = () => {
             </div>
 
             <button
-              type="button"
+              type="submit"
               disabled={!acceptedPrivacy}
               className={cn(
                 "sm:col-span-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white  transition ease-in-out duration-150",
