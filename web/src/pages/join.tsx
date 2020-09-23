@@ -148,10 +148,12 @@ const NotFoundPage = () => {
               />
             </label>
 
-            <div className="sm:col-span-2 flex items-start">
-              <span
+            <label className="sm:col-span-2 flex items-start" htmlFor="privacy">
+              <button
+                name="privacy"
                 onClick={() => setAcceptedPrivacy(!acceptedPrivacy)}
                 role="checkbox"
+                type="button"
                 tabIndex={0}
                 aria-checked="false"
                 className={cn(
@@ -168,7 +170,7 @@ const NotFoundPage = () => {
                     acceptedPrivacy ? "translate-x-5" : "translate-x-0"
                   )}
                 />
-              </span>
+              </button>
 
               <p className="ml-3 text-base leading-6 text-gray-500">
                 By selecting this, you agree to the{" "}
@@ -177,10 +179,11 @@ const NotFoundPage = () => {
                 </Link>
                 .
               </p>
-            </div>
+            </label>
 
             <button
               type="submit"
+              name="submit"
               disabled={!acceptedPrivacy}
               className={cn(
                 "sm:col-span-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white  transition ease-in-out duration-150",
