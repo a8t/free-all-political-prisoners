@@ -69,7 +69,7 @@ const Comp = () => {
   const selectedPrisoner = featuredPrisoners[selectedIndex];
 
   return (
-    <section className="max-w-screen-xl lg:py-16 shadow-xl mb-24 bg-white p-12">
+    <section className="max-w-screen-xl lg:py-16 shadow-xl mb-24 mt-12 bg-white p-12">
       <header className="mb-16">
         <h2 className="text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl">
           Featured Prisoners
