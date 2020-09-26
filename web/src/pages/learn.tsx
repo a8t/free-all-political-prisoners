@@ -55,7 +55,7 @@ const featuredPrisoners: Array<FeaturedProfile> = [
   },
 ];
 
-const Comp = () => {
+const FeaturedPrisoners = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   // const [isRunning, toggleIsRunning] = useBoolean(true);
 
@@ -69,7 +69,7 @@ const Comp = () => {
   const selectedPrisoner = featuredPrisoners[selectedIndex];
 
   return (
-    <section className="max-w-screen-xl lg:py-16 shadow-xl mb-24 mt-12 bg-white p-12">
+    <div className="max-w-screen-xl lg:py-16 shadow-xl mb-24 mt-12 bg-white p-12 scroll-item">
       <header className="mb-16">
         <h2 className="text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl">
           Featured Prisoners
@@ -169,7 +169,7 @@ const Comp = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
@@ -248,15 +248,17 @@ const LearnPage = () => {
             Urgent Release Prisoners
           </h2>
         </div> */}
-      <Comp />
-
-      <PrisonerRows rows={prisonerData} />
-
-      <section>
+      <section id="featured-prisoners">
+        <FeaturedPrisoners />
+      </section>
+      <section id="urgent-release">
+        <PrisonerRows rows={prisonerData} />
+      </section>
+      <section id="all-prisoners" className="scroll-item">
         <header className="mb-5 pb-5 border-b border-gray-200 space-y-2">
           <h3 className="text-lg leading-6 font-medium text-gray-900">All prisoners</h3>
           <p className="max-w-4xl text-sm leading-5 text-gray-500">
-            A growing archive of all current political prisoners in the Philippines
+            A growing archive of current political prisoners in the Philippines
           </p>
         </header>
 
