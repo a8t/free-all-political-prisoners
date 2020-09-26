@@ -138,7 +138,7 @@ const IndexPage = (props) => {
                   icon: <FaHeart className="w-5 h-5" />,
                   title: "Adopt a prisoner",
                   body:
-                    "Provide regular support for the immediate and long-term needs of a political prisoner. Make a lsting impact.",
+                    "Provide regular support for the immediate and long-term needs of a political prisoner. Make a lasting impact.",
                 },
                 {
                   icon: <FaCalendar className="w-5 h-5" />,
