@@ -33,4 +33,9 @@ module.exports = {
       addUtilities(justifySelf, justifyVariants);
     }),
   ],
+
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
 };
