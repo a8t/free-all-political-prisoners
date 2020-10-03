@@ -118,7 +118,7 @@ const DesktopMenuItem: React.FC<{
         show={shouldShow}
         {...{
           enter: "transition ease-out duration-100 delay-100",
-          enterFrom: "opacity-0 -translate-y-24",
+          enterFrom: "opacity-0 -translate-y-6",
           enterTo: "opacity-100 translate-y-0",
           leave: "transition ease-in duration-100",
           leaveFrom: "opacity-100",
@@ -126,8 +126,7 @@ const DesktopMenuItem: React.FC<{
         }}
       >
         <div
-          className="hidden md:block absolute inset-x-0 transform shadow-lg left-0 bg-white w-96"
-          style={{ top: 75, zIndex: -1 }}
+          className="hidden md:block absolute inset-x-0 transform shadow-lg left-0 bg-white w-96 top-16"
           ref={menuRef}
         >
           <div className="rounded-lg shadow-lg w-96 ">
