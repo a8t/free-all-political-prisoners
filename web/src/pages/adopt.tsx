@@ -207,9 +207,6 @@ const Modal = ({ isModalOpen, closeModal }) => {
 };
 
 const AdoptPage = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
   return (
     <Layout rootClassnames="bg-gray-50 overflow-hidden">
       <SEO title="Adopt a Political Prisoner | ICHRP Canada" />
@@ -257,10 +254,7 @@ const AdoptPage = () => {
             <h5>Ready to make a difference?</h5>
           </div>
           <Link to="adopt/form" className="flex text-base max-w-prose mx-auto lg:max-w-none">
-            <button
-              onClick={openModal}
-              className="rounded-md focus:shadow-outline-blue focus:border-blue-300 border-transparent border-4 -mx-2"
-            >
+            <button className="rounded-md focus:shadow-outline-blue focus:border-blue-300 border-transparent border-4 -mx-2">
               <span className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out">
                 Get started
               </span>
@@ -332,10 +326,6 @@ const AdoptPage = () => {
           </blockquote>
         </div>
       </div>
-
-      <div className="mt-8" />
-
-      <Modal isModalOpen={isModalOpen} closeModal={closeModal} />
     </Layout>
   );
 };

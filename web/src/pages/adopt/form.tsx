@@ -244,7 +244,7 @@ export default function AdoptFormPage() {
                   </div>
                 </fieldset>
                 <Transition show={values.prisonerOptions === "specific"} {...transitionProps}>
-                  <div>
+                  <div className="space-y-6">
                     <TextInputGroup>
                       <label className="block text-sm font-medium leading-5 text-gray-700">
                         Prisoner to adopt
@@ -281,76 +281,77 @@ export default function AdoptFormPage() {
                 </Transition>
               </FormStep>
 
-              <FormDivider />
-
               <Transition show={step >= 2} {...transitionProps}>
-                <FormStep
-                  id="personalInfo"
-                  title={
-                    <FormStepTitle
-                      title="Your contact information"
-                      subtitle="Please fill this out so that we can get back to you as soon as possible."
-                    />
-                  }
-                  actionButton={
-                    <span
-                      className={cn(
-                        "inline-flex rounded-md shadow-sm",
-                        isContactStepDone
-                          ? null
-                          : "opacity-25 cursor-not-allowed pointer-events-none"
-                      )}
-                    >
-                      <button
-                        disabled={!isContactStepDone}
-                        type="submit"
-                        className="inline-flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
-                      >
-                        Submit
-                      </button>
-                    </span>
-                  }
-                >
-                  <TextInputGroup>
-                    <TextInput label="Name" name="contactName" isRequired autofocus />
-                    <TextInput label="Email address" name="contactEmail" isRequired />
-                  </TextInputGroup>
-
-                  <TextInputGroup>
-                    <TextInput label="City" name="contactCity" isRequired />
-                    <TextInput label="State / Province" name="contactProvince" isRequired />
-                    <TextInput label="Country" name="contactCountry" isRequired />
-                  </TextInputGroup>
-
-                  <div className="bg-teal-50 -mx-6 px-6 py-4 mt-4">
-                    <label className="flex font-medium items-center text-gray-700 text-sm leading-5 ">
-                      <Field
-                        name="registeringAsOrg"
-                        value="assign"
-                        type="checkbox"
-                        className="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                <div>
+                  <FormDivider />
+                  <FormStep
+                    id="personalInfo"
+                    title={
+                      <FormStepTitle
+                        title="Your contact information"
+                        subtitle="Please fill this out so that we can get back to you as soon as possible."
                       />
-                      <div className="ml-3 ">I am registering on behalf of an organization</div>
-                    </label>
+                    }
+                    actionButton={
+                      <span
+                        className={cn(
+                          "inline-flex rounded-md shadow-sm",
+                          isContactStepDone
+                            ? null
+                            : "opacity-25 cursor-not-allowed pointer-events-none"
+                        )}
+                      >
+                        <button
+                          disabled={!isContactStepDone}
+                          type="submit"
+                          className="inline-flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
+                        >
+                          Submit
+                        </button>
+                      </span>
+                    }
+                  >
+                    <TextInputGroup>
+                      <TextInput label="Name" name="contactName" isRequired autofocus />
+                      <TextInput label="Email address" name="contactEmail" isRequired />
+                    </TextInputGroup>
 
-                    <Transition show={values.registeringAsOrg?.length > 0} {...transitionProps}>
-                      <div>
-                        <TextInputGroup>
-                          <TextInput
-                            label="Organization name"
-                            name="contactOrganizationName"
-                            isRequired
-                          />
-                          <TextInput
-                            label="Organization email address"
-                            name="contactOrganizationEmail"
-                            isRequired
-                          />
-                        </TextInputGroup>
-                      </div>
-                    </Transition>
-                  </div>
-                </FormStep>
+                    <TextInputGroup>
+                      <TextInput label="City" name="contactCity" isRequired />
+                      <TextInput label="State / Province" name="contactProvince" isRequired />
+                      <TextInput label="Country" name="contactCountry" isRequired />
+                    </TextInputGroup>
+
+                    <div className="bg-teal-50 -mx-6 px-6 py-4 mt-4">
+                      <label className="flex font-medium items-center text-gray-700 text-sm leading-5 ">
+                        <Field
+                          name="registeringAsOrg"
+                          value="assign"
+                          type="checkbox"
+                          className="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                        />
+                        <div className="ml-3 ">I am registering on behalf of an organization</div>
+                      </label>
+
+                      <Transition show={values.registeringAsOrg?.length > 0} {...transitionProps}>
+                        <div>
+                          <TextInputGroup>
+                            <TextInput
+                              label="Organization name"
+                              name="contactOrganizationName"
+                              isRequired
+                            />
+                            <TextInput
+                              label="Organization email address"
+                              name="contactOrganizationEmail"
+                              isRequired
+                            />
+                          </TextInputGroup>
+                        </div>
+                      </Transition>
+                    </div>
+                  </FormStep>
+                </div>
               </Transition>
               {/* IGNORE THIS. it's for netlify */}
               <input name="prisonerOptions" hidden />
