@@ -48,7 +48,7 @@ const PrisonerRows = ({ rows = [] }) => {
   ];
 
   return (
-    <div className="mx-auto py-12 max-w-screen-xl">
+    <div className="mx-auto max-w-screen-xl">
       <div className="space-y-5 sm:space-y-4">
         <h2 className="text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl">
           All urgent release prisoners
