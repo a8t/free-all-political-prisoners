@@ -80,7 +80,6 @@ const NotFoundPage = () => {
             </p>
           </div>
           <form
-            action="#"
             method="POST"
             className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-6"
             data-netlify="true"
