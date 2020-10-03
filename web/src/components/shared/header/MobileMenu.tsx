@@ -12,10 +12,10 @@ const MobileMenuLink: React.FC<{ to: string; icon: React.ReactNode }> = ({
   return (
     <Link
       to={to}
-      className="-m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
+      className="-m-3 p-3 py-4 flex items-center space-x-3 text-xl rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
     >
       <span className="text-red-600">{icon}</span>
-      <div className="text-base leading-6 font-medium text-gray-900">{children}</div>
+      <div className="leading-6 font-medium text-gray-900">{children}</div>
     </Link>
   );
 };
@@ -83,7 +83,7 @@ const MobileMenu = () => {
                   </div>
                 </div>
                 <div>
-                  <nav className="grid gap-x-8">
+                  <nav className="grid gap-4">
                     <MobileMenuLink to="/act" icon={<FaHammer />}>
                       Act
                     </MobileMenuLink>
