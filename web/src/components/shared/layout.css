@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+*[id] {
+  scroll-margin-top: 7em;
+}
+
 /*
 blockquote {
   font-family: monospace;

@@ -10,7 +10,13 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    position: ["responsive", "hover", "focus"],
+    inset: ["responsive", "hover"],
+    scale: ["responsive", "hover", "focus", "group-hover"],
+    duration: ["responsive", "hover", "focus", "group-hover"],
+    transitionTimingFunction: ["responsive", "hover", "focus"],
+  },
   plugins: [
     require("@tailwindcss/ui"),
     plugin(function ({ addUtilities, e }) {
