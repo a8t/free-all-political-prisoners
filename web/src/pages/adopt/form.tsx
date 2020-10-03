@@ -138,7 +138,6 @@ export default function AdoptFormPage() {
           contactOrganizationEmail: null,
         }}
         onSubmit={async (values) => {
-          console.log(values);
           const res = await fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -169,7 +168,7 @@ export default function AdoptFormPage() {
               ? values.contactOrganizationName && values.contactOrganizationEmail
               : true);
           return (
-            <Form name="contact-demo" data-netlify={true}>
+            <Form name="adopt-register" data-netlify={true}>
               <FormStep
                 title={
                   <FormStepTitle
