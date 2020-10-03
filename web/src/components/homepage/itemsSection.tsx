@@ -54,7 +54,7 @@ const ItemsSection: React.FC<{
           <p className="mt-4 max-w-2xl text-xl leading-7 text-gray-500 lg:mx-auto">{subtitle}</p>
         </div>
         <div className="mt-10">
-          <ul className="grid md:grid-cols-2 md:col-gap-8 row-gap-10">
+          <ul className="grid md:grid-cols-2 md:gap-y-8 gap-x-10">
             {items.map(({ icon, title, body, link }) => (
               <SectionItem icon={icon} title={title} body={body} link={link} />
             ))}

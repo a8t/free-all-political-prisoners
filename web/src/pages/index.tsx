@@ -125,39 +125,6 @@ const IndexPage = (props) => {
 
           {[
             {
-              title: "Act now",
-              subtitle: "With your help, we can free all political prisoners in the Philippines.",
-              iconColor: "bg-yellow-500",
-              items: [
-                {
-                  icon: <FaCommentDots className="w-5 h-5" />,
-                  title: "Speak up",
-                  body: "Use your voice! Join our letter-writing and lobbying campaigns.",
-                },
-                {
-                  icon: <FaHeart className="w-5 h-5" />,
-                  title: "Adopt a prisoner",
-                  body:
-                    "Provide regular support for the immediate and long-term needs of a political prisoner. Make a lsting impact.",
-                },
-                {
-                  icon: <FaCalendar className="w-5 h-5" />,
-                  title: (
-                    <span>
-                      View our calendar of activities
-                      <span className="text-gray-500"> (coming soon)</span>
-                    </span>
-                  ),
-                  body: "Get involved with global days of action.",
-                },
-              ],
-              image: freekarina,
-              caption:
-                "Karina, an accounting student and youth agrarian reform advocate, has been imprisoned since before her 19th birthday.",
-              sectionLink: "/act",
-              sectionLinkText: "See more forms of action",
-            },
-            {
               title: "Learn more",
               subtitle:
                 "Find out why so many people are imprisoned for their political beliefs in the Philippines. Meet the prisoners and explore their conditions.",
@@ -187,6 +154,39 @@ const IndexPage = (props) => {
                 "Imprisoned peace consultant Rey Casambre (right) has hypertension and type 2 diabetes.",
               sectionLink: "/learn",
               sectionLinkText: "See all resources",
+            },
+            {
+              title: "Act now",
+              subtitle: "With your help, we can free all political prisoners in the Philippines.",
+              iconColor: "bg-yellow-500",
+              items: [
+                {
+                  icon: <FaHeart className="w-5 h-5" />,
+                  title: "Adopt a prisoner",
+                  body:
+                    "Provide regular support for the immediate and long-term needs of a political prisoner. Make a lasting impact.",
+                },
+                {
+                  icon: <FaCommentDots className="w-5 h-5" />,
+                  title: "Speak up",
+                  body: "Use your voice! Join our letter-writing and lobbying campaigns.",
+                },
+                {
+                  icon: <FaCalendar className="w-5 h-5" />,
+                  title: (
+                    <span>
+                      View our calendar of activities
+                      <span className="text-gray-500"> (coming soon)</span>
+                    </span>
+                  ),
+                  body: "Get involved with global days of action.",
+                },
+              ],
+              image: freekarina,
+              caption:
+                "Karina, an accounting student and youth agrarian reform advocate, has been imprisoned since before her 19th birthday.",
+              sectionLink: "/act",
+              sectionLinkText: "See more forms of action",
             },
           ].map(
             (

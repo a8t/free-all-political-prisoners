@@ -83,7 +83,7 @@ const MobileMenu = () => {
                   </div>
                 </div>
                 <div>
-                  <nav className="grid row-gap-8">
+                  <nav className="grid gap-x-8">
                     <MobileMenuLink to="/act" icon={<FaHammer />}>
                       Act
                     </MobileMenuLink>
