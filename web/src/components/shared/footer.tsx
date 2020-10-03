@@ -47,8 +47,8 @@ const footerLinkGroups: Array<FooterLinkGroup> = [
     title: "Act",
     titleLinkUrl: "/act",
     links: [
-      { linkText: "Write a letter", linkUrl: "/write" },
       { linkText: "Adopt a prisoner", linkUrl: "/adopt" },
+      { linkText: "Write a letter", linkUrl: "/write" },
     ],
   },
   {

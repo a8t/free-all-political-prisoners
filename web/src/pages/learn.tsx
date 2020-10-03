@@ -147,13 +147,13 @@ const FeaturedPrisoners = () => {
               </p>
               <div className="mt-4 -mx-2 -my-1.5 flex">
                 <Link
-                  to="/act"
+                  to="/adopt"
                   className="px-2 py-1.5 rounded-md text-sm leading-5 font-medium text-green-800 hover:bg-green-200 focus:outline-none focus:bg-green-100 transition ease-in-out duration-150"
                 >
                   Adopt a prisoner
                 </Link>
                 <Link
-                  to="/act"
+                  to="/write"
                   className="ml-3 px-2 py-1.5 rounded-md text-sm leading-5 font-medium text-green-800 hover:bg-green-200 focus:outline-none focus:bg-green-100 transition ease-in-out duration-150"
                 >
                   Write a letter
@@ -251,10 +251,11 @@ const LearnPage = () => {
       <section id="featured-prisoners">
         <FeaturedPrisoners />
       </section>
-      <section id="urgent-release">
+      <section id="urgent-release" className="my-48">
         <PrisonerRows rows={prisonerData} />
       </section>
-      <section id="all-prisoners" className="scroll-item">
+
+      <section id="all-prisoners" className="mb-48">
         <header className="mb-5 pb-5 border-b border-gray-200 space-y-2">
           <h3 className="text-lg leading-6 font-medium text-gray-900">All prisoners</h3>
           <p className="max-w-4xl text-sm leading-5 text-gray-500">
