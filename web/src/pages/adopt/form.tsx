@@ -168,7 +168,7 @@ export default function AdoptFormPage() {
               ? values.contactOrganizationName && values.contactOrganizationEmail
               : true);
           return (
-            <Form name="adopt-register" data-netlify={true}>
+            <Form name="adopt-register" data-netlify={true} translate>
               <FormStep
                 title={
                   <FormStepTitle
@@ -352,6 +352,18 @@ export default function AdoptFormPage() {
                   </div>
                 </FormStep>
               </Transition>
+              {/* IGNORE THIS. it's for netlify */}
+              <input name="prisonerOptions" hidden />
+              <input name="prisoner" hidden />
+              <input name="otherPrisonerName" hidden />
+              <input name="contactName" hidden />
+              <input name="contactEmail" hidden />
+              <input name="contactCity" hidden />
+              <input name="contactProvince" hidden />
+              <input name="contactCountry" hidden />
+              <input name="registeringAsOrg" hidden />
+              <input name="contactOrganizationName" hidden />
+              <input name="contactOrganizationEmail" hidden />
             </Form>
           );
         }}
