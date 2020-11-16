@@ -87,10 +87,10 @@ const MobileMenu = () => {
                     <MobileMenuLink to="/act" icon={<FaHammer />}>
                       Act
                     </MobileMenuLink>
-                    <MobileMenuLink to="/act" icon={<FaBook />}>
+                    <MobileMenuLink to="/learn" icon={<FaBook />}>
                       Learn
                     </MobileMenuLink>
-                    <MobileMenuLink to="/act" icon={<FaWarehouse />}>
+                    <MobileMenuLink to="/join" icon={<FaWarehouse />}>
                       Join
                     </MobileMenuLink>
                   </nav>
