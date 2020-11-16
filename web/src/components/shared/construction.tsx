@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useLocalStorage } from "react-use";
-import Transition from "../utility/Transition";
+import { Transition } from "@headlessui/react";
 import { FaExclamationTriangle } from "react-icons/fa";
 
 export default function UnderConstruction() {
@@ -21,6 +21,7 @@ export default function UnderConstruction() {
         leaveFrom: "opacity-100 translate-y-0",
         leaveTo: "opacity-0 translate-y-1",
       }}
+      className="z-50"
     >
       <div className="fixed bottom-0 inset-x-0 pb-2 sm:pb-5">
         <div className="max-w-screen-xl mx-auto px-2 sm:px-6 lg:px-8">
