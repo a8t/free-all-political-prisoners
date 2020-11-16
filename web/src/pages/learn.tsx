@@ -7,7 +7,10 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 import { cn } from "../lib/helpers";
 import { useBoolean, useInterval } from "react-use";
 import { FaHandHoldingHeart, FaUser } from "react-icons/fa";
+import mime from "mime-types";
+
 import { casambre, freekarina } from "../images";
+import { FileDownloads } from "../components/shared/FileDownload";
 
 interface FeaturedProfile {
   name: string;
@@ -55,8 +58,43 @@ const featuredPrisoners: Array<FeaturedProfile> = [
   },
 ];
 
+const usePrisonerProfilesQuery = () => {
+  const { allAirtablePrisoners } = useStaticQuery(graphql`
+    query PrisonerProfilesFiles {
+      allAirtablePrisoners(filter: { data: { Profile: { id: { ne: null } } } }) {
+        nodes {
+          data {
+            fullName: Full_name
+            profile: Profile {
+              raw {
+                filename
+                url
+                type
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  return allAirtablePrisoners.nodes;
+};
+
 const FeaturedPrisoners = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const prisonerProfiles = usePrisonerProfilesQuery();
+
+  const files = prisonerProfiles.map(({ data: { fullName, profile } }) => {
+    const { url, type } = profile.raw[0];
+
+    return {
+      title: fullName,
+      downloadLink: url,
+      extension: mime.extension(type),
+    };
+  });
   // const [isRunning, toggleIsRunning] = useBoolean(true);
 
   // useInterval(
@@ -169,6 +207,11 @@ const FeaturedPrisoners = () => {
           </div>
         </div>
       </div>
+
+      <h2 className="text-2xl mt-12 leading-9 font-extrabold tracking-tight sm:text-3xl">
+        Download prisoner one-page profiles
+      </h2>
+      <FileDownloads files={files} itemIconColor="bg-teal-500" itemBodyColor="bg-teal-50" />
     </div>
   );
 };
