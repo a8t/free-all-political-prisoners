@@ -58,6 +58,7 @@ const DesktopMenu = ({ shouldHeaderBeTransparent }) => (
           body: "Be a voice for the voiceless.",
           icon: <FaRegEnvelope className="w-6 h-6" />,
           linkUrl: "/write",
+          disabled: true,
         },
 
         {
