@@ -69,7 +69,7 @@ const ResourcesPage = () => {
       <SEO title="Resources | Set Them Free | ICHRP Canada" />
 
       <div className="min-h-screen bg-gray-200 relative">
-        <header className="bg-indigo-700 pb-48 pt-12">
+        <header className="bg-indigo-700 pb-48 pt-12 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white  flex flex-row justify-start items-center">
             <section className=" text-white mt-4 max-w-prose space-y-2">
               <h1 className="text-5xl leading-tight font-bold text-white">Campaign Resources</h1>
@@ -216,8 +216,8 @@ const StepSection = ({ title, subtitle, body }) => {
     <section className="bg-white rounded-lg shadow max-w-7xl overflow-hidden">
       <header className=" px-4 py-5 border-b border-gray-200 sm:px-6 bg-gray-100">
         <h3 className="text-lg leading-6 font-medium text-gray-900">
-          <div className="flex items-center">
-            <FaFolder className="mr-2 text-gray-500" /> {title}
+          <div className="sm:flex items-center">
+            <FaFolder className="mr-2 text-gray-500 mb-2 sm:mb-0" /> <span>{title}</span>
           </div>
         </h3>
         <p className="mt-1 text-sm text-gray-500 max-w-prose">{subtitle}</p>

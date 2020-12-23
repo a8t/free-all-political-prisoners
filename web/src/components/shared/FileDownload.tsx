@@ -78,7 +78,7 @@ export const FileDownloads = ({
   return (
     <ul
       className="p-2 -m-2 mt-6 
-    grid grid-rows-2 grid-flow-col auto-cols-max 
+    grid  
     overflow-x-auto overflow-y-visible 
     w-100 
     sm:overflow-visible sm:grid-flow-row sm:grid-rows-none gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3
