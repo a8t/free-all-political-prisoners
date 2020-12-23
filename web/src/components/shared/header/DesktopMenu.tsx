@@ -21,9 +21,9 @@ const DesktopMenu = ({ shouldHeaderBeTransparent }) => (
       items={[
         {
           icon: <FaQuestionCircle className="w-5 h-5" />,
-          title: "Who are political prisoners?",
-          body: "Meet the featured prisoners",
-          linkUrl: "/learn#featured-prisoners",
+          title: "Resources",
+          body: "Prisoner profiles, sample letters",
+          linkUrl: "/resources",
         },
         {
           icon: <FaExclamationTriangle className="w-5 h-5" />,
@@ -57,8 +57,7 @@ const DesktopMenu = ({ shouldHeaderBeTransparent }) => (
           title: "Write",
           body: "Be a voice for the voiceless.",
           icon: <FaRegEnvelope className="w-6 h-6" />,
-          linkUrl: null,
-          disabled: true,
+          linkUrl: "/write",
         },
 
         {

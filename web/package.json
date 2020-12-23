@@ -8,7 +8,8 @@
     "start": "yarn dev",
     "build": "gatsby build",
     "clean-cache": "gatsby clean",
-    "dev": "npm run clean-cache && gatsby develop -H 0.0.0.0 -p 2612",
+    "dev": "npm run clean-cache && gatsby develop  -p 8000",
+    "dev2": "npm run clean-cache && gatsby develop -H 0.0.0.0 -p 2612",
     "lint": "eslint .",
     "format": "prettier-eslint --write \"**/*.{js,jsx,ts,tsx}\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
@@ -29,7 +30,7 @@
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-standard": "^4.0.0",
-    "gatsby": "^2.9.2",
+    "gatsby": "^2.29.1",
     "gatsby-plugin-postcss": "^2.1.19",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-typescript": "^2.4.16",

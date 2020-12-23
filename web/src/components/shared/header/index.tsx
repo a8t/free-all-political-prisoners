@@ -16,7 +16,7 @@ const Header = ({ shouldHeaderStartTransparent }) => {
   return (
     <div
       className={classNames(
-        "top-0 z-10 w-full",
+        "top-0 z-50 w-full",
         shouldHeaderStartTransparent ? "fixed" : "sticky "
       )}
     >
