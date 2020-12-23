@@ -33,6 +33,13 @@ module.exports = {
         path: path.join(__dirname, `src`, `images`),
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `resources`,
+        path: path.join(__dirname, `src`, `resources`),
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -54,6 +61,11 @@ module.exports = {
             tableName: `Prisoners`,
             queryName: `Prisoners`,
             separateNodeType: true,
+            mapping: {
+              Profile: `fileNode`,
+            },
+            tableLinks: [`Cooking_Method`, `Style`],
+            separateMapType: true,
           },
           {
             baseId: `appTS75FBD9SHpRjX`,

@@ -6,7 +6,12 @@ import "./layout.css";
 import UnderConstruction from "./construction";
 import { cn } from "../../lib/helpers";
 
-export default function Layout({ children, rootClassnames = "", isHomepage = false }) {
+export default function Layout({
+  children,
+  rootClassnames = "",
+  isHomepage = false,
+  isContentFullWidth = false,
+}) {
   return (
     <div className={cn("min-h-screen flex flex-col", rootClassnames)}>
       <Helmet>
@@ -16,7 +21,14 @@ export default function Layout({ children, rootClassnames = "", isHomepage = fal
       {isHomepage ? (
         <main className="flex-1">{children}</main>
       ) : (
-        <div className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8">{children}</div>
+        <div
+          className={cn(
+            "flex-1 ",
+            isContentFullWidth ? "" : "container mx-auto px-4 sm:px-6 lg:px-8"
+          )}
+        >
+          {children}
+        </div>
       )}
       <UnderConstruction />
       <Footer />

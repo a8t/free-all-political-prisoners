@@ -11,6 +11,9 @@ module.exports = {
     },
   },
   variants: {
+    display: ["responsive", "group-hover"],
+    opacity: ["responsive", "hover", "focus", "active", "group-hover"],
+    zIndex: ["responsive", "hover", "focus", "group-hover"],
     position: ["responsive", "hover", "focus"],
     inset: ["responsive", "hover"],
     scale: ["responsive", "hover", "focus", "group-hover"],

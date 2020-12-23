@@ -14,3 +14,4 @@ export const write = require("./write.svg");
 export const help = require("./help.jpg");
 export const fides = require("./fides.jpg");
 export const perry = require("./perry.png");
+export const ReadingDoodle = require("./ReadingDoodle.svg");
