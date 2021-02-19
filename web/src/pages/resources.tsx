@@ -45,11 +45,11 @@ const ResourcesPage = () => {
         publicURL
         extension
       }
-      letterEmbassy: file(absolutePath: { glob: "**/resources/letter_grp*.docx" }) {
+      letterEmbassy: file(absolutePath: { glob: "**/resources/letter_ca*.docx" }) {
         publicURL
         extension
       }
-      letterGRP: file(absolutePath: { glob: "**/resources/letter_ca*.docx" }) {
+      letterGRP: file(absolutePath: { glob: "**/resources/letter_grp*.docx" }) {
         publicURL
         extension
       }
